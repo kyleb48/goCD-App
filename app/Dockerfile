@@ -4,7 +4,9 @@ WORKDIR /home/node/app
 COPY package*.json ./
 RUN npm config set registry http://registry.npmjs.org/
 RUN npm install
+RUN npm ci
+RUN npm run test
 COPY --chown=node:node . .
 USER node
 EXPOSE 8080
-CMD [ "node", "index.js" ]
+CMD [ "node", "index.js","npm", "run", "start" ]
