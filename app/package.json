@@ -4,8 +4,8 @@
   "description": "A simple to-do list application demo",
   "main": "index.js",
   "scripts": {
-  "test": "mocha"
-  },
+  "test": "echo Testing123!"
+},
   "author": "Forethought",
   "repository" : {"type": "git", "url": "https://github.com/linuxacademy/content-devops-monitoring-app"},
   "license": "ISC",
