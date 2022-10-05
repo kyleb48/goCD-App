@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations: 
+    rollme: {{ randAlphaNum 5 | quote }}
+  name: "{{ .Values.name }}"
+  namespace: "{{ .Values.namespace}}"
+  labels:
+    app: gocd
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: "{{ .Values.name }}"
+  template:
+    metadata:
+      labels:
+        app: "{{ .Values.name }}"
+    spec:
+      containers:
+      - name: "{{ .Values.name }}"
+        image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
+        command: ['sh','-c',' echo Hello world -  {{ .Values.deployment.image }}']
+        ports:
+        - containerPort: 80
+

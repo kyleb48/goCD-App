@@ -1,0 +1,7 @@
+---
+releases:
+  - name: gocd-helm-app
+    chart: goCD-App/gocd-helm-app
+    installed: true
+    values:
+      - ./gocd-helm-app/values.yaml

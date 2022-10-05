@@ -1,0 +1,7 @@
+deployment:
+  image: "kyleb48/gocd-app"
+  tag: "2"
+namespace: gocd-helm-app-deployment
+name: gocd-helm-app-deployment
+replicaCount: 4
+
