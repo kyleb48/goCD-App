@@ -20,7 +20,4 @@ spec:
       containers:
       - name: "{{ .Values.name }}"
         image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
-        command: ['sh','-c',' echo Hello world -  {{ .Values.deployment.image }}']
-        ports:
-        - containerPort: 80
 
