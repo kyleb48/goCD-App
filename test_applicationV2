@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo kyleb48/gocd-app:${GO_PIPELINE_COUNTER}
+
+docker run -e CI=true kyleb48/gocd-app:${GO_PIPELINE_COUNTER} npm run test -- --forceExit
